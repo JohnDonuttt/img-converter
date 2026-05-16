@@ -1,6 +1,6 @@
 # SAFELIGHT — image converter
 
-A simple, fast, **100% in-browser** image converter. Convert between **PNG, JPEG and WebP** — accepts WebP, PNG, JPEG, GIF, BMP, AVIF and SVG as input. Nothing is uploaded; your images never leave your device.
+A simple, fast, **100% in-browser** image converter built with **Vite + React**. Convert between **PNG, JPEG and WebP** — accepts WebP, PNG, JPEG, GIF, BMP, AVIF and SVG as input. Nothing is uploaded; your images never leave your device.
 
 ## Features
 
@@ -9,15 +9,25 @@ A simple, fast, **100% in-browser** image converter. Convert between **PNG, JPEG
 - Per-file results: thumbnail, before→after size, and % saved
 - Download files individually or all at once
 - JPEG output flattens transparency onto white
-- Single self-contained file — no build step, no server
+- Fully client-side — conversion uses the browser Canvas API
 
-## Use it
+## Develop
 
-Open `index.html` in any modern browser.
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build      # outputs to dist/
+npm run preview    # preview the production build
+```
 
 ## Deploy
 
-It's a static site. To host it on Vercel:
+Push to a Git repo and import on Vercel — the Vite preset is auto-detected. Or:
 
 ```bash
 npm i -g vercel
@@ -26,4 +36,4 @@ vercel
 
 ## Notes
 
-Conversion uses the browser Canvas API, which can **encode** to PNG/JPEG/WebP only. AVIF, GIF and ICO output would require a server-side encoder.
+The browser Canvas API can **encode** to PNG/JPEG/WebP only. AVIF, GIF and ICO output would require a server-side encoder.
